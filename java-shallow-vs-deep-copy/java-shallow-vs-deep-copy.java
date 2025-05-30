@@ -130,7 +130,7 @@ class Person implements Cloneable{
   @Override
   protected Object clone() throws CloneNotSupportedException{
     Person cloned=(Person) super.clone();
-    cloned.address=(Address) address.clone();
+    cloned.address=(Address) address.clone();        //deep copy of address
     return cloned;
   }
 
