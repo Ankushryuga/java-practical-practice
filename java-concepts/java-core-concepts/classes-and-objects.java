@@ -11,4 +11,68 @@ that has a state and behaviour.
 
 ## Syntax of Java Classes
 One can declare a public, private, or default class as:
+
+public class PublicClassName {
+    // declaration section for 
+    // methods and attributes
+} 
+
+private class PrivateClassName {
+    // declaration section for 
+    // methods and attributes
+} 
+
+class DefaultClassName {
+    // declaration section for 
+    // methods and attributes
+} 
+*/
+
+class Car{
+    // declaration of private attributes
+    private String modelName;
+    private String owner;
+    private int regNumber;
+    
+    // declaration of public constructor
+    public Car(String modelName, String owner, int regNumber){
+        this.modelName = modelName;
+        this.owner = owner;
+        this.regNumber = regNumber;
+    }
+    
+    // declaration of public methods
+    public void startEngine(){
+        System.out.println("Engine is starting ....");
+    }
+    
+    public void accelerate(){
+        System.out.println("Car is accelerting ...");
+    }
+    
+    public void stop(){
+        System.out.println("Car is stopping ...");
+    }
+    // prints car attributes
+	public void showCarInformation(){
+        System.out.println("The car is owned by: " + this.owner);
+        System.out.println("Car Model: " + this.modelName);
+       	System.out.println("Registration Number: " + String.valueOf(this.regNumber));
+    }
+}
+/***
+Components of Java Class:
+The class name pertains to a namespace in which we can associate coherent methods and data
+
+Class Keyword: it signifies that we intended to begin creating a prototype of an object.
+
+
+Constructors
+Java constructors initialize an instantiated object based on preconditions set by the caller. Constructors can be parameterized or specified without parameters.
+
+A class may contain multiple constructors that configure an instantiated object accordingly. A constructor is a specialized method that must be defined with:
+
+The same name as the class.
+Does not return an explicit type.
+Cannot be synchonized, abstract, static, and final.
 */
