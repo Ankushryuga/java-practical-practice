@@ -77,4 +77,63 @@ Cloned: Person{name='Alice', age=30, address=Los Angeles}
 }
 
 
-public class DeepCopy{}
+
+/*
+Deep copy, it duplicates everything directly or indirectly referenced by the fields in the original object.
+THis means the cloned object does not share references with the original object: it create a complete independent copy.
+*/
+
+class Address implements Cloneable{
+  String city;
+  Address(String city){
+    this.city=city;
+  }
+  @Override
+  protected Object clone() throws CloneNotSupportedException{
+    return super.clone();
+  }
+}
+
+public class DeepCopy implements Cloneable {
+  String name;
+  int age;
+  Address address;
+  DeepCopy(String name, int age, Address address){
+    this.name=name;
+    this.age=age;
+    this.address=address;
+  }
+  @Override
+  protected Object clone() throws CloneNotSupportedException{
+    DeepCopy cloned=(DeepCopy) super.clone();
+    cloned.address=(Address) address.clone();  //deep copy of address.
+    return cloned;
+  }
+
+  @Override
+  public String toString(){
+    return "Person{name='"+name+"', age="+age+", address="+address.city+"}";
+  }
+
+  public static void main(String[] args){
+    try{
+      Address address=new Address("New York");
+      DeepCopy original=new DeepCopy("Alice", 30, address);
+      DeepCopy cloned=(DeepCopy) original.clone();
+
+      System.out.println("Original: "+original);
+      System.out.println("Cloned: "+cloned);
+      cloned.address.city="Los Angeles";
+      System.out.println("After modifying cloned object");
+      System.out.println("Original"+original);
+      System.out.println("Cloned"+cloned);
+    }catch(CloneNotSupportedException e){
+      e.printStackTrace();
+  }
+}
+
+
+
+
+
+
