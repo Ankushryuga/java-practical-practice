@@ -98,3 +98,13 @@
                 amount++;
             }
         }
+
+
+
+| Level        | Concepts Learned                                                  |
+| ------------ | ----------------------------------------------------------------- |
+| Beginner     | `Runnable`, `Thread`, thread states, lifecycle                    |
+| Intermediate | `join`, `sleep`, `interrupt`, `synchronized`, race conditions     |
+| Advanced     | `ExecutorService`, `Callable`, `Future`, `ScheduledExecutor`      |
+| Expert       | `Lock`, `Latch`, `Semaphore`, `CompletableFuture`, `ForkJoinPool` |
+| Real Use     | Producer-Consumer pattern, thread-safe queue, coordination        |

@@ -18,4 +18,9 @@
         4. Task Management Utilities:
             4.1. invokeAll() -> Submits a collections of tasks and returns a list of Futures.
             4.2. invokeAny() -> Submits a collections of tasks and returns the result of one that completes successfully.
-            
+
+
+## Resources:
+https://www.javaguides.net/2018/09/executorservice-interface-in-java.html
+
+https://www.geeksforgeeks.org/java-util-concurrent-executorservice-interface-with-examples/
