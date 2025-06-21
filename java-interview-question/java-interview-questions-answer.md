@@ -85,6 +85,6 @@
     => its a native method and returns the integer hash code value of the object.
 
 # Can super class reference variable can hold an object of sub class?
-
+    =>
 
 
