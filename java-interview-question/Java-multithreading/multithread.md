@@ -86,3 +86,10 @@ https://jenkov.com/tutorials/java-concurrency/index.html#better-user-experience-
     ExecutorService, Callable, Future
     ForkJoin framework
     CompletableFuture (async programming)
+
+# What are the disadvantages of multithreading?
+    =>
+    1. Complexity in design and debug.
+    2. Synchrnoization overhead
+    3. Deadlocks
+    etc
