@@ -231,6 +231,59 @@ https://jenkov.com/tutorials/java-concurrency/index.html#better-user-experience-
         }
         # Example: synchronized method:
         public synchronized void doWark(){
+        }    
+
+        # Instance methods lock on this.
+        # static synchronized methods lock on the Class Object.
+
+        import java.util.concurrent.locks.ReentrantLock;
         
+        ReentrantLock lock = new ReentrantLock();
+        
+        lock.lock();
+        try {
+            // critical section
+            System.out.println("Thread has exclusive access");
+        } finally {
+            lock.unlock(); // always unlock in a finally block
         }
+
         
+# 🔄 When Do You Use synchronized, ReentrantLock These?
+    | Locking Mechanism | Use Case                                                    |
+    | ----------------- | ----------------------------------------------------------- |
+    | `synchronized`    | Simple mutual exclusion with implicit locking               |
+    | `ReentrantLock`   | More flexible locking (tryLock, interruptibility, fairness) |
+
+
+# How notify() method is different from notifyAll() method?
+    => Both are methods of the Object class in java and are used for inter-thread communication, typically with wait(), inside a synchronized context.
+    ### notify():
+    1. Wakes up on thread that is waiting on the object's monitor.
+    2. The Specific thread chosen is not guranted
+    3. Useful when only 1 thread needs to proceed.
+    # example:
+    synchronized(obj){
+        obj.notify();
+    }
+
+    ### notifyAll():
+    1. Wakes up all threads that are waiting on the object's monitor.
+    2. All awakened thread will compete to acquire the lock and proceed.
+    3. Use this when multiple thread might be waiting, and you don't know which should proceed.
+    # example:
+    synchronized(obj){
+        obj.notifyAll();
+    }
+
+    | Feature          | `notify()`                                                 | `notifyAll()`                        |
+    | ---------------- | ---------------------------------------------------------- | ------------------------------------ |
+    | Wakes up         | One waiting thread                                         | All waiting threads                  |
+    | Thread selection | Arbitrary                                                  | All notified (but still compete)     |
+    | Use case         | Only one thread needs to run                               | Multiple threads may need to proceed |
+    | Risk             | Can cause **missed signals** if the wrong thread is chosen | Safer in complex conditions          |
+
+    #######note:
+    1. Both must be called inside a synchronized block.
+    2. Threads must be waiting on the same object's monitor using wait().
+    3. Use notify() only if you're sure that one waiting thread is sufficient and the rest can remain waiting.
