@@ -392,3 +392,66 @@
 # Why Java uses String literal concept?
 
     => optimize memory usage, improve performance, and ensure efficient reuse of identical string values.
+
+
+# What is annotations in java?
+    =>
+    these are a form of metadata that provide data about a program but not part of the program itself. They have no direct effect on the code they annotate but can be used by compiler, development tools, or during runtime via reflection.
+
+# What are Annotations?
+    =>
+    1. Metadata: Information about the code such as classes, methods, variables, parameters, etc.
+    2. Syntax: Denoted by @ followed by the annotation name, e.g., @Override.
+    3. Purpose: Help with code analysis, generate boilerplate code, enforce compile-time checks, or influence runtime behavior.
+
+# Common Uses of Annotations
+    =>
+    1.Compile-time checks: For example, @Override ensures a method overrides a method in a superclass.
+    2. Code generation: Frameworks use annotations to generate code automatically.
+    3. Runtime processing: Frameworks like Spring or Hibernate use annotations to configure beans or map database entities.
+
+    Examples of Built-in Java Annotations
+    @Override: Checks that a method is overriding a superclass method.
+
+    @Deprecated: Marks a method or class as deprecated.
+
+    @SuppressWarnings: Instructs the compiler to ignore certain warnings.
+
+    @FunctionalInterface: Indicates an interface with exactly one abstract method.
+
+# Custom Annotations
+    =>
+    You can also define your own annotations using @interface keyword.
+
+    public @interface MyAnnotation {
+        String value();
+        int number() default 0;
+    }
+
+
+# What is yield in java?
+    => 
+    yield has 2 different meaning depending on the context;
+    1. Thread.yeild():  method(Concurrency context)
+        a. It's a static method in the Thread class.
+        b. It hints to the thread scheduler that the current thread is willing to pause its execution to allow other threads of the same priority to run.
+        c. It does not guarantee that the current thread will stop or that another thread will run immediately
+        d. Useful for improving thread scheduling fairness but should be used carefully.
+
+        # Example:
+        ## Thread.yield():
+        This tells the JVM: “I’m willing to give up my CPU time now if other threads need it.”
+    
+    2. yield keyword in java 14+(switch expressions)
+        => 
+        a. introduced as part of switch expression in java.
+        b. Used to return a value from a switch expression.
+        c. Allows switch to be used as an expression (returning a value) instead of a statement
+
+
+# What is Number Class? 
+    =>
+    The Number class is an abstract class in java.lang package. It is the superclass of the classes that represent numeric values convertible to primitive data types such as byte, short, int, long, float and double.
+
+![alt text](image.png)
+
