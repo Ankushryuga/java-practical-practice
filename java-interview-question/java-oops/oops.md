@@ -466,3 +466,15 @@
 # How will you create an immutable class in Java?
 
     => make class final, all fields private and final, and provide only getter no setters.
+
+# What is immutability in java, why immutablility and create your own immutable class?
+    => An immutable object is an object whose state (fields) cannot change after its created.
+    # Why immutability?
+        1. Thread-safety without synchronization
+        2. Safe for use as keys in hash-based collections like HashMap
+    # Rule to create immutable class.
+        1. Declare the class as final -> so it cannot be extended.
+        2. Make all fields private and final.
+        3. No setters
+        4. Initialize all fields via contructor
+        
