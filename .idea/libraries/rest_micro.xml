@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="rest-micro">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/java-spring-boot-rest-api/rest-micro.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
