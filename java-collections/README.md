@@ -61,3 +61,15 @@
 
 
 ![image](https://github.com/user-attachments/assets/a684fdeb-aaa3-4854-8bd1-6993a52d9b20)
+
+########	COLLECTIONS	  ########
+1. Collection API		### it means concepts
+2. Collection			### it means interface
+3. Collections			### it means class
+
+
+
+
+### Map doesn't implement Collection interface but still comes in collection api.
+
+
