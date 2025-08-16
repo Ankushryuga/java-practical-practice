@@ -5,3 +5,5 @@
 
 - 2. Some important packages:
      - mvc or web, validation, cloud, security, JPA, MySQL, Lombok etc.
+
+- 3. Annotations Resources: https://www.geeksforgeeks.org/springboot/spring-boot-annotations/
